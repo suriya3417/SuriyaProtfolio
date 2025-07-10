@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   Container, Navbar, Nav, Row, Col,
-  Button, Image, ListGroup, Card
-} from 'react-bootstrap';
+  Button, Image, Card
+} from 'react-bootstrap'; // Removed ListGroup
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -74,31 +74,31 @@ function App() {
         </Container>
       </section>
 
-<section id="skills" className="py-5 bg-light">
-  <Container>
-    <h2 className="text-center mb-4">Skills</h2>
-    <Row>
-      {[
-        { title: "Programming", content: "Java, Python, JavaScript" },
-        { title: "Web Development", content: "Spring Boot, React, Node.js" },
-        { title: "Database", content: "SQL, PostgreSQL" },
-        { title: "Software Development", content: "REST APIs, Microservices" },
-        { title: "Version Control", content: "Git, GitHub" },
-        { title: "Data Tools", content: "Power BI, Excel" },
-      ].map((skill, idx) => (
-        <Col key={idx} xs={12} md={6} className={`mb-4 animate-sprinkle delay-${idx}`}>
-          <Card className="h-100 shadow text-center">
-            <Card.Body>
-              <Card.Title className="fw-bold">{skill.title}</Card.Title>
-              <Card.Text>{skill.content}</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  </Container>
-</section>
-
+      {/* Skills */}
+      <section id="skills" className="py-5 bg-light">
+        <Container>
+          <h2 className="text-center mb-4">Skills</h2>
+          <Row>
+            {[
+              { title: "Programming", content: "Java, Python, JavaScript" },
+              { title: "Web Development", content: "Spring Boot, React, Node.js" },
+              { title: "Database", content: "SQL, PostgreSQL" },
+              { title: "Software Development", content: "REST APIs, Microservices" },
+              { title: "Version Control", content: "Git, GitHub" },
+              { title: "Data Tools", content: "Power BI, Excel" },
+            ].map((skill, idx) => (
+              <Col key={idx} xs={12} md={6} className={`mb-4 animate-sprinkle delay-${idx}`}>
+                <Card className="h-100 shadow text-center">
+                  <Card.Body>
+                    <Card.Title className="fw-bold">{skill.title}</Card.Title>
+                    <Card.Text>{skill.content}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
       {/* Tools */}
       <section id="tools" className="py-5 bg-light">
@@ -106,12 +106,13 @@ function App() {
           <h2 className="text-center mb-4">Languages & Tools</h2>
           <div className="scroll-container">
             <div className="scroll-track d-flex flex-nowrap justify-content-start">
-
-              {[ 'Html.png','icons8-css-50.png','icons8-java-94.png',
-                'icons8-javascript-50.png','icons8-python-94.png','icons8-react-24.png',
-                'icons8-postgresql-50 - Copy.png','icons8-intellij-idea-50.png',
-                'icons8-visual-studio-48.png','icons8-postman-inc-24.png',
-                'icons8-swagger-50.png','icons8-pycharm-50.png' ].map((icon, idx) => (
+              {[
+                'Html.png', 'icons8-css-50.png', 'icons8-java-94.png',
+                'icons8-javascript-50.png', 'icons8-python-94.png', 'icons8-react-24.png',
+                'icons8-postgresql-50 - Copy.png', 'icons8-intellij-idea-50.png',
+                'icons8-visual-studio-48.png', 'icons8-postman-inc-24.png',
+                'icons8-swagger-50.png', 'icons8-pycharm-50.png'
+              ].map((icon, idx) => (
                 <div className="tool-item text-center p-2" key={idx} style={{ minWidth: '80px' }}>
                   <Image src={`/images/${icon}`} alt={icon} width={60} />
                   <p>{icon.split('-')[0].replace('icons8', '')}</p>
@@ -127,17 +128,34 @@ function App() {
         <Container>
           <h2 className="text-center mb-4">My Projects</h2>
           <Row className="g-4 justify-content-center">
-            {[ { img: 'Bankling_application.avif', title: 'Banking System (Spring Boot)',
-                desc: 'Secure banking backend with JWT auth, OTP verification.', link: 'https://github.com/suriya3417/baking_apllication_java/tree/main/' },
-              { img: 'Ecommers.jpg', title: 'E‑Commerce App (Django)',
-                desc: 'Full Django e‑commerce platform with Stripe.', link: 'https://github.com/suriya3417/Ecommerce_web_using_django_and_html_css' },
-              { img: 'Movie_recommentation.jpg', title: 'Movie Recommendation System',
-                desc: 'Full‑stack app with Razorpay integration.', link: 'https://github.com/suriya3417/movie_recommendation' },
-              { img: 'Bankling_application.avif', title: 'Banking App (React Frontend)',
-                desc: 'React frontend with secure login & OTP.', link: 'https://github.com/suriya3417/BANKING_APPLICATION_REACT' } ].map((p, i) => (
+            {[
+              {
+                img: 'Bankling_application.avif',
+                title: 'Banking System (Spring Boot)',
+                desc: 'Secure banking backend with JWT auth, OTP verification.',
+                link: 'https://github.com/suriya3417/baking_apllication_java/tree/main/'
+              },
+              {
+                img: 'Ecommers.jpg',
+                title: 'E‑Commerce App (Django)',
+                desc: 'Full Django e‑commerce platform with Stripe.',
+                link: 'https://github.com/suriya3417/Ecommerce_web_using_django_and_html_css'
+              },
+              {
+                img: 'Movie_recommentation.jpg',
+                title: 'Movie Recommendation System',
+                desc: 'Full‑stack app with Razorpay integration.',
+                link: 'https://github.com/suriya3417/movie_recommendation'
+              },
+              {
+                img: 'Bankling_application.avif',
+                title: 'Banking App (React Frontend)',
+                desc: 'React frontend with secure login & OTP.',
+                link: 'https://github.com/suriya3417/BANKING_APPLICATION_REACT'
+              }
+            ].map((p, i) => (
               <Col key={i} xs={12} sm={6} md={5} lg={4}>
-                <a href={p.link} target="_blank" rel="noreferrer"
-                   className="text-decoration-none text-dark">
+                <a href={p.link} target="_blank" rel="noreferrer" className="text-decoration-none text-dark">
                   <Card className="h-100">
                     <Card.Img variant="top" src={`/images/${p.img}`} height="180" style={{ objectFit: 'cover' }} />
                     <Card.Body>
@@ -155,8 +173,14 @@ function App() {
       {/* Education */}
       <section id="education" className="py-5 bg-light">
         <Container className="text-center">
-          <Image src="/images/17-SRM-TRP-Engineering-College-affiliated-to-Anna-University.webp"
-                 alt="College" fluid rounded className="mb-4" style={{ maxWidth: '250px' }} />
+          <Image
+            src="/images/17-SRM-TRP-Engineering-College-affiliated-to-Anna-University.webp"
+            alt="College"
+            fluid
+            rounded
+            className="mb-4"
+            style={{ maxWidth: '250px' }}
+          />
           <h2>Education</h2>
           <p>
             <strong>SRM TRP Engineering College</strong><br />
@@ -169,8 +193,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-dark text-light py-4 text-center">
         <Container>
-          <p>Email: <a href="mailto:suriyaiece@gmail.com" className="text-light">
-            suriyaiece@gmail.com</a></p>
+          <p>Email: <a href="mailto:suriyaiece@gmail.com" className="text-light">suriyaiece@gmail.com</a></p>
           <p>© 2025 creater Suriya</p>
         </Container>
       </footer>
