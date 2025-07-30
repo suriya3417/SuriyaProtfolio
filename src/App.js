@@ -81,9 +81,9 @@ function App() {
           <Row>
             {[
               { title: "Programming", content: "Java, Python, JavaScript" },
-              { title: "Web Development", content: "Spring Boot, React, Node.js" },
+              { title: "Web Development", content: "Spring Boot, React, Django" },
               { title: "Database", content: "SQL, PostgreSQL" },
-              { title: "Software Development", content: "REST APIs, Microservices" },
+              { title: "Software Development", content: "REST APIs" },
               { title: "Version Control", content: "Git, GitHub" },
               { title: "Data Tools", content: "Power BI, Excel" },
             ].map((skill, idx) => (
@@ -185,7 +185,7 @@ function App() {
           <p>
             <strong>SRM TRP Engineering College</strong><br />
             B.E. in Electronics and Communication Engineering<br />
-            CGPA: 7.5
+            CGPA: 7.40
           </p>
         </Container>
       </section>
